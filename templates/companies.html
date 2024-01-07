@@ -11,7 +11,7 @@
 </head>
 <header>
     <div class="navigation">
-        <ul>
+        <ul class="navigation-bar">
             <li>
                 <img class = "logo" src="https://lh3.googleusercontent.com/pw/ABLVV865zZsgXJ-wBw7KACKpPrsjTPx2VTsqNVHC_2smRPKCS86r_iY4K7bDNVw4zn4PLbHAeg0pM0dbzgiyyqky829lYPxWxNfQwX9W9JfNDwBp0QB_03mGlq7FpHDq3KpELJh2ZIVhRjK902M_ytHvGG38kc7CC5CZNKkiespNdEiSP5ARrHqbCPsxqWQgG0G6EhL_6tDTpFhyrqJYiOgmAWKS3VRRWQdVEppBW5qA3FB7Urws5tT3-GL62ayoRhI-AYSpTr2kxilpDekJ2wSE0Dg2QY2BPIPG9LMRODu7bqZ-OgTo_QLqNmNyhEJH0GN3SU-atIaFnTxjIBFx3zhQT1xoQpFLHUlmMrdK1-sS8ryuPY2VX8l47s343VNVvkT_U_PgheYQ-wLC7h3LxoBnwvIYPvp7IXBJWBkJT9vC-TckLtUv21zusUsvY2sHir6cQmj_l2xEBK9BBslvC72Izz2TK9dtvwXbHJZCTbKaF3vb6VU-qPixO04yfkxXnD60nXFKVGISd1lXrHN96LMYui5tYINQCfMXzU7Z8WEotRYvn3vM59FkHkBCDX5yEPUE-zhcL4v2C3RO_aCTF61HUVFiCt1Y7O6w7v3UkPyLinXJL6wNsImOi8r9ju4l1SJpWgNe-K1kpqmvL62-8W6WByXU6IH4k80yM_YWCWOa96US0henJ89CXM_OuTKqsNDX2XVkbcKSCNGyQC6jt_U28XBbxxlobQHnYUwSHrP-tO7_pb3sykxoOr8pEeOgj5LIjp1hZ91U3wPQDJG8nfwxe4sgVgjNoj7rWZvSVOgyK63bYcHEMQwQvm8jihzYS_GkpiT1I1O4IGQSn5eWsywzgl1XCLkF_B6ADgJWqV4i1gXgOX5sXXR3smwxI-V5O9Zn=w500-h500-s-no-gm?authuser=0" width="50" height="50">
             </li>
@@ -28,113 +28,138 @@
     </div>
 </header>
 <body>
-    <div class="container">
     {% for company in companyDetails %}
-        <h1>{{company[0]}}</h1>
-        <h2>{{company[1]}}</h2>
-        <img src="{{ company[17] }}" class="company_image">
-        <h3>Services Offered</h3>
-
-        <div class="row">
-            
-            {% if company[3] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Dispensing</li></ul>
-                </div>
-            {% endif %}
-            {% if company[4] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Minor Ailments</li></ul>
-                </div>
-            {% endif %}
-            {% if company[5] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">First Aid</li></ul>
-                </div>
-            {% endif %}
-            {% if company[6] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Medication Review</li></ul>
-                </div>
-            {% endif %}
-            {% if company[7] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Medication Information</li></ul>
-                </div>
-            {% endif %}
-            {% if company[8] == "y" %}
-                <div class="col-sm-6">                
-                    <ul><li style="font-size: xx-large;">Renewals</li></ul>
-                </div>
-            {% endif %}
-            {% if company[9] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Smoke Cessation</li></ul>
-                </div>
-            {% endif %}
-            {% if company[10] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Diabetes Treatment</li></ul>
-                </div>
-            {% endif %}
-            {% if company[11] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Travel Consultation</li></ul>
-                </div>
-            {% endif %}
-            {% if company[12] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Medication Disposal</li></ul>
-                </div>
-            {% endif %}
-            {% if company[13] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Free Delivery</li></ul>
-                </div>
-            {% endif %}
-            {% if company[14] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Immunization</li></ul>
-                </div>
-            {% endif %}
-            {% if company[15] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Hypertension</li></ul>
-                </div>
-            {% endif %}
-            {% if company[16] == "y" %}
-                <div class="col-sm-6">
-                    <ul><li style="font-size: xx-large;">Chronic Pain treatment</li></ul>
-                </div>
-            {% endif %}
-
+    <div class="flex-container">
+        <div class="overlay">
+            <img src="{{ company[17] }}" class="company_image">
+            <div class="overlay-text">
+                {{company[0]}}
+                <p class="subtext">{{company[1]}}</p>
+            </div>
         </div>
+        <div class="info">
+            <h3 class="service-title">Services Offered:</h3>
+            <div class="row">
+                <ul class="service-list">
+                    {% if company[3] == "y" %}
+                        <li class="service-text">Dispensing</li>
+                    {% endif %}
+                    {% if company[4] == "y" %}
+                        <li class="service-text">Minor Ailments</li>
+                    {% endif %}
+                    {% if company[5] == "y" %}
+                        <li class="service-text">First Aid</li>
+                    {% endif %}
+                    {% if company[6] == "y" %}
+                        <li class="service-text">Medication Review</li>
+                    {% endif %}
+                    {% if company[7] == "y" %}
+                        <li class="service-text">Medication Information</li>
+                    {% endif %}
+                    {% if company[8] == "y" %}               
+                        <li class="service-text">Renewals</li>
+                    {% endif %}
+                    {% if company[9] == "y" %}
+                        <li class="service-text">Smoke Cessation</li>
+                    {% endif %}
+                    {% if company[10] == "y" %}
+                        <li class="service-text">Diabetes Treatment</li>
+                    {% endif %}
+                    {% if company[11] == "y" %}
+                        <li class="service-text">Travel Consultation</li>
+                    {% endif %}
+                    {% if company[12] == "y" %}
+                        <li class="service-text">Medication Disposal</li>
+                    {% endif %}
+                    {% if company[13] == "y" %}
+                        <li class="service-text">Free Delivery</li>
+                    {% endif %}
+                    {% if company[14] == "y" %}
+                        <li class="service-text">Immunization</li>
+                    {% endif %}
+                    {% if company[15] == "y" %}
+                        <li class="service-text">Hypertension</li>
+                    {% endif %}
+                    {% if company[16] == "y" %}
+                        <li class="service-text">Chronic Pain treatment</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div> 
     {% endfor %}
-    </div>
 </body>
 <style>
+    .service-title {
+        padding-left: 1vw;
+        padding-top: 2vh
+    }
+    .service-list {
+        width:50vw;
+        list-style: none;
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+    }
+    .service-text {
+        font-size: 20px;
+        flex: 1 1 20vw;
+    }
+    .overlay {
+        position: relative;
+        display: inline-block;
+    }
+
+    .overlay img {
+        display: block;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .overlay-text {
+        position: absolute;
+        top: 30vh; 
+        left: 0%; 
+        transform: translate(0%, 0%); 
+        color: #111; 
+        padding: 10px 20px; 
+        font-size: 50px; 
+        font-weight: 500;
+        text-align: left;
+    }
+    .subtext {
+        color: #4b4b4b;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+    }
     .container {
         margin-top: 10px;
         margin-bottom: 10px;
         background-color: #fffff0;
         border-radius: 12px;
-        border: 2px solid #aeaeae;
-    }
-    h1 {
         padding-top: 10px;
+        padding-bottom: 10px;
     }
     .company_image {
-            max-height: 500px;
-            align-items: center;
-            border-radius: 12px;
-        }
+        max-height: 100vh;
+        max-width: 50vw;
+        align-items: left;
+        filter: opacity(40%);
+        height: 100vh;
+        width: 50vh;
+        object-fit: cover;
+    }
     body {
-        background-image: url("https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg");
+        background-color: #fffff0;
     }
     .logo {
         margin-right: 5px;
     }
-    ul {
+    .navigation-bar {
         list-style-type: none;
         display:flex;
         flex-direction:row;
