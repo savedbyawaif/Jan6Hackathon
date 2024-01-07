@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pharmfinder</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,13 +16,13 @@
                 <img class = "logo" src="https://lh3.googleusercontent.com/pw/ABLVV865zZsgXJ-wBw7KACKpPrsjTPx2VTsqNVHC_2smRPKCS86r_iY4K7bDNVw4zn4PLbHAeg0pM0dbzgiyyqky829lYPxWxNfQwX9W9JfNDwBp0QB_03mGlq7FpHDq3KpELJh2ZIVhRjK902M_ytHvGG38kc7CC5CZNKkiespNdEiSP5ARrHqbCPsxqWQgG0G6EhL_6tDTpFhyrqJYiOgmAWKS3VRRWQdVEppBW5qA3FB7Urws5tT3-GL62ayoRhI-AYSpTr2kxilpDekJ2wSE0Dg2QY2BPIPG9LMRODu7bqZ-OgTo_QLqNmNyhEJH0GN3SU-atIaFnTxjIBFx3zhQT1xoQpFLHUlmMrdK1-sS8ryuPY2VX8l47s343VNVvkT_U_PgheYQ-wLC7h3LxoBnwvIYPvp7IXBJWBkJT9vC-TckLtUv21zusUsvY2sHir6cQmj_l2xEBK9BBslvC72Izz2TK9dtvwXbHJZCTbKaF3vb6VU-qPixO04yfkxXnD60nXFKVGISd1lXrHN96LMYui5tYINQCfMXzU7Z8WEotRYvn3vM59FkHkBCDX5yEPUE-zhcL4v2C3RO_aCTF61HUVFiCt1Y7O6w7v3UkPyLinXJL6wNsImOi8r9ju4l1SJpWgNe-K1kpqmvL62-8W6WByXU6IH4k80yM_YWCWOa96US0henJ89CXM_OuTKqsNDX2XVkbcKSCNGyQC6jt_U28XBbxxlobQHnYUwSHrP-tO7_pb3sykxoOr8pEeOgj5LIjp1hZ91U3wPQDJG8nfwxe4sgVgjNoj7rWZvSVOgyK63bYcHEMQwQvm8jihzYS_GkpiT1I1O4IGQSn5eWsywzgl1XCLkF_B6ADgJWqV4i1gXgOX5sXXR3smwxI-V5O9Zn=w500-h500-s-no-gm?authuser=0" width="50" height="50">
             </li>
             <li>
-                <a href="#">Home</a>
+                <a href="home">Home</a>
             </li>
             <li>
                 <a href="#">Search</a>
             </li>
             <li>
-                <a href="#">Inventory</a>
+                <a href="services">Services</a>
             </li>
         </ul>
     </div>
@@ -45,7 +45,7 @@
     </div>
     <div class="search-wrapper d-flex justify-content-center align-items-center">
         <div class="box">
-            <input type="search" id="search" class="search" style="margin-left: 10px;" onKeyDown="key_down(event)">
+            <input type="search" id="search" placeholder="Enter a medication..." class="search" style="margin-left: 10px;" onKeyDown="key_down(event)">
         </div>
     </div>
     <div class="d-flex justify-content-center align-items-center">
@@ -90,7 +90,6 @@
         border-left: 1px solid #aeaeae;
         border-right: 1px solid #aeaeae;
     }
-
     .box {
         text-align: center;
     }
@@ -98,8 +97,9 @@
         background-image: url("https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg");
     }
     header {
-        vertical-align: bottom;
+        vertical-align: middle;
         background-color: #fffff5;
+        border-bottom: 1px solid #aeaeae;
     }
     .search {
         width: 100%;
@@ -118,7 +118,7 @@
     }
     .title-text {
         text-align: center;
-        padding-top: 15vh;
+        padding-top: 16vh;
         padding-bottom: 20px;
         font-size: 10vw;
         font-weight: 400;
