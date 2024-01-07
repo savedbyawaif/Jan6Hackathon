@@ -35,7 +35,7 @@
                     <h5 class="card-title">{{company[0]}}</h5>
                     <h6 class="card-text text-muted">{{company[1]}}</h6>
                     <a href="{{ url_for('pharmacy', company_name=company[0])}}" class="card-link">View Services</a>
-                    <a href="https://www.google.com/search?q={{ company[1] | urlencode }}" class="card-link">View on Google</a>
+                    <a href="https://www.google.com/search?q={{ company[1] | urlencode }}" target="_blank" class="card-link">View on Google</a>
                 </div>
             </div>
         </div>
