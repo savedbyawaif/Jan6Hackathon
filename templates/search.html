@@ -33,8 +33,13 @@
             document.getElementById("result-text").innerHTML = "Pharmacy Search Results for: " + name
         </script>
         <div class="row">
+        {% if companyDetails == () %}
+            <div class="error-text">
+                No results found.
+            </div>
+        {% endif %}
         {% for company in companyDetails %}
-            <div class="col-sm-4">
+            <div class="col-sm-4"> 
                 <div class="card">
                     <div class="card-body ">
                         <h5 class="card-title">{{company[0]}}</h5>
@@ -51,6 +56,9 @@
 </html>
 
 <style>
+    .error-text {
+        padding-left: 20px;
+    }
     .card {
         height: 200px;
         margin-bottom: 15px;
