@@ -19,13 +19,21 @@ def index():
 def home():     
     return render_template('index.html')
 
-@app.route("/search")
+@app.route("/search", methods=['GET'])
 def search():
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM Pharmacy")
-    companyDetails = cur.fetchall()
-    cur.close()
-    return render_template('search.html', companyDetails = companyDetails)
+    query = request.args.get('q')
+    if query is not None:
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM Pharmacy WHERE company_name LIKE %s", ('%' + query + '%',))
+        companyDetails = cur.fetchall()
+        cur.close()
+        return render_template('search.html', companyDetails=companyDetails)
+    else:
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM Pharmacy")
+        companyDetails = cur.fetchall()
+        cur.close()
+        return render_template('search.html', companyDetails=companyDetails)
 
 @app.route("/companies")
 def users():
