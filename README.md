@@ -3,3 +3,6 @@ Pharmfinder is a web application that lets the user search for a healthcare serv
 
 ### How Does Pharmfinder Work?
 We entered data from all the pharmacies in Edmonton into an external database using MySQL. Using Python and Flask, we developed our project's back-end to display our data as a web application. The front-end of our project was created using HTML, CSS, and JavaScript.
+
+### How to Run
+____________________
