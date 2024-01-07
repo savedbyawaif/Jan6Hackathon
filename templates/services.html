@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <h1>Pharmfinder</h1>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('search') }}">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('services') }}">Services</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="search-class-wrapper" style="background-image: url('https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg');">
+            <div class="container">
+                <h1>Sort Pharmacies by Services</h1>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a href="/results?service=Dispensing">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dispensing</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Minor_Ailments">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Minor Ailments</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=First_Aid">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">First Aid</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Medication_Rev">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Medication Review</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Med_Info">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Medication Information</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Renewals">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Renewals</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Smoke_Cessation">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Smoke Cessation</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Diabetes">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Diabetes Treatment</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Travel_Consult">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Travel Consultation</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Disposal">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Medication Disposal</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Delivery">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Delivery</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Immunization">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Immunization</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Hypertension">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hypertension Treatment</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="/results?service=Chronic_Pain">
+                            <div class="card transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chronic Pain Treatment</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+      </div>
+
+</body>
+</html>
+
+<style>
+    .transparent{
+        background-color: rgba(255, 255, 255, 0.6);
+        height: 25vh;
+    }
+    .search-class-wrapper {
+        height: 150vh;
+    }
+</style>
