@@ -1,16 +1,20 @@
 import bs4
-import urllib.request
-from urllib.request import urlopen
+from selenium import webdriver
 from bs4 import BeautifulSoup as soup
-import csv
+import requests
 
-html = urlopen('https://en.wikipedia.org/wiki/list_of_largest_recorded_music_markets')
-bsobj = soup(html.read(), "html.parser")
-tbody = bsobj('table', {'class':"wikitable plainrowheaders sortable"})[0].findAll('tr')
-xl = []
-for row in tbody:
-    cols = row.findChildren(recursive = False)
-    cols = tuple(element.text.strip().replace("%","") for element in cols)
-    xl.append(cols)
-xl = xl[1:-1]
-print(xl)
+url = 'https://shoponline.calgarycoop.com/crowfoot#/search?q=pharmacy'
+response = requests.get(url)
+bsobj = soup(response.content, 'html.parser')
+product_cards = bsobj.find_all('single-product-card')
+
+num = len(product_cards)
+print(num)
+print(response.status_code)
+
+for card in product_cards:
+    product_name = card.find('h2', class_='pc-title').text.strip()
+    product_price = card.find('strong', class_='product-price').text.strip()
+    product_image = card.find('img', class_='pc-image')['src']
+
+print("hey")
