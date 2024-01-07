@@ -16,8 +16,12 @@ def index():
     return render_template('index.html')
 
 @app.route("/search")
-def reg():
-    return render_template('search.html')
+def search():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM Pharmacy")
+    companyDetails = cur.fetchall()
+    cur.close()
+    return render_template('search.html', companyDetails = companyDetails)
 
 @app.route("/companies")
 def users():
@@ -27,5 +31,13 @@ def users():
     cur.close()
     return render_template('companies.html', companyDetails = companyDetails)
 
+@app.route("/pharmacy", methods=['GET'])
+def pharmacy():
+    cur = mysql.connection.cursor()
+    company_name = request.args.get('company_name')
+    cur.execute("SELECT * FROM Pharmacy WHERE company_name = %s", (company_name,))
+    companyDetails = cur.fetchall()
+    return render_template('companies.html', companyDetails = companyDetails)
+    
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,10 +1,115 @@
-<h1>Companies</h1>
-{% for company in companyDetails %}
-    <tr>
-        <td>{{company[0]}}</td>
-        <td>{{company[1]}}</td>
-        <td>{{company[2]}}</td>
-        <td>{{company[3]}}</td>
-        <td>{{company[4]}}</td>
-    </tr>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <h1>Pharmfinder</h1>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inventory</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="container">
+        {% for company in companyDetails %}
+            <h1>{{company[0]}}</h1>
+            <h2>{{company[1]}}</h2>
+            <img src="{{ company[17] }}" class="company_image">
+            <h3>Services Offered</h3>
+
+            <div class="row">
+                
+                {% if company[3] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Dispensing</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[4] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Minor Ailments</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[5] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">First Aid</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[6] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Medication Review</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[7] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Medication Information</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[8] == "y" %}
+                    <div class="col-sm-6">                
+                        <ul><li style="font-size: xx-large;">Renewals</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[9] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Smoke Cessation</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[10] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Diabetes Treatment</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[11] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Travel Consultation</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[12] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Medication Disposal</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[13] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Free Delivery</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[14] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Immunization</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[15] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Hypertension</li></ul>
+                    </div>
+                {% endif %}
+                {% if company[16] == "y" %}
+                    <div class="col-sm-6">
+                        <ul><li style="font-size: xx-large;">Chronic Pain treatment</li></ul>
+                    </div>
+                {% endif %}
+
+            </div>
+        {% endfor %}
+      </div>
+
+      <style>
+          .company_image {
+              max-height: 500px;
+              align-items: center;
+          }
+      </style>
