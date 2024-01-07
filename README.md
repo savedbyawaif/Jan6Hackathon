@@ -6,3 +6,4 @@ We entered data from all the pharmacies in Edmonton into an external database us
 
 ### How to Run
 1. Navigate to the working directory
+2. Type in the terminal "python app.py" (or another working equivalent working equivalent)
