@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pharmfinder</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-    <nav class="navbar navbar-expand-sm bg-light">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <h1>Pharmfinder</h1>
+<header>
+    <div class="navigation">
+        <ul>
+            <li>
+                <img class = "logo" src="https://lh3.googleusercontent.com/pw/ABLVV865zZsgXJ-wBw7KACKpPrsjTPx2VTsqNVHC_2smRPKCS86r_iY4K7bDNVw4zn4PLbHAeg0pM0dbzgiyyqky829lYPxWxNfQwX9W9JfNDwBp0QB_03mGlq7FpHDq3KpELJh2ZIVhRjK902M_ytHvGG38kc7CC5CZNKkiespNdEiSP5ARrHqbCPsxqWQgG0G6EhL_6tDTpFhyrqJYiOgmAWKS3VRRWQdVEppBW5qA3FB7Urws5tT3-GL62ayoRhI-AYSpTr2kxilpDekJ2wSE0Dg2QY2BPIPG9LMRODu7bqZ-OgTo_QLqNmNyhEJH0GN3SU-atIaFnTxjIBFx3zhQT1xoQpFLHUlmMrdK1-sS8ryuPY2VX8l47s343VNVvkT_U_PgheYQ-wLC7h3LxoBnwvIYPvp7IXBJWBkJT9vC-TckLtUv21zusUsvY2sHir6cQmj_l2xEBK9BBslvC72Izz2TK9dtvwXbHJZCTbKaF3vb6VU-qPixO04yfkxXnD60nXFKVGISd1lXrHN96LMYui5tYINQCfMXzU7Z8WEotRYvn3vM59FkHkBCDX5yEPUE-zhcL4v2C3RO_aCTF61HUVFiCt1Y7O6w7v3UkPyLinXJL6wNsImOi8r9ju4l1SJpWgNe-K1kpqmvL62-8W6WByXU6IH4k80yM_YWCWOa96US0henJ89CXM_OuTKqsNDX2XVkbcKSCNGyQC6jt_U28XBbxxlobQHnYUwSHrP-tO7_pb3sykxoOr8pEeOgj5LIjp1hZ91U3wPQDJG8nfwxe4sgVgjNoj7rWZvSVOgyK63bYcHEMQwQvm8jihzYS_GkpiT1I1O4IGQSn5eWsywzgl1XCLkF_B6ADgJWqV4i1gXgOX5sXXR3smwxI-V5O9Zn=w500-h500-s-no-gm?authuser=0" width="50" height="50">
             </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('index') }}">Home</a>
@@ -23,20 +23,27 @@
           </li>
         </ul>
       </nav>
-      <div class="container">
-        <h1>Company Filter Results for: </h1>
+</header>
+<body>
+    <div class="container">
+        <h1 id="result-text">Pharmacy Search Results for: {{name}}</h1>
+        <script>
+            const query = new URLSearchParams(window.location.search);
+            const name = query.get("q");
+            document.getElementById("result-text").innerHTML = "Pharmacy Search Results for: " + name
+        </script>
         <div class="row">
         {% for company in companyDetails %}
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body ">
-                    <h5 class="card-title">{{company[0]}}</h5>
-                    <h6 class="card-text text-muted">{{company[1]}}</h6>
-                    <a href="{{ url_for('pharmacy', company_name=company[0])}}" class="card-link">View Services</a>
-                    <a href="https://www.google.com/search?q={{ company[1] | urlencode }}" class="card-link">View on Google</a>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body ">
+                        <h5 class="card-title">{{company[0]}}</h5>
+                        <h6 class="card-text text-muted">{{company[1]}}</h6>
+                        <a href="{{ url_for('pharmacy', company_name=company[0])}}" class="card-link">View Services</a>
+                        <a href="https://www.google.com/search?q={{ company[1] | urlencode }}" target="_blank" class="card-link">View on Google</a>
+                    </div>
                 </div>
             </div>
-        </div>
         {% endfor %}    
           </div>
       </div>
@@ -44,8 +51,57 @@
 </html>
 
 <style>
+    h1 {
+        padding-top: 10px;
+    }
     .box-icon {
         border: 2px black;
         border-radius: 10px;
+    }
+    body {
+        background-image: url("https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg");
+    }
+    .logo {
+        margin-right: 5px;
+    }
+    ul {
+        list-style-type: none;
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+        margin: 0;
+        padding: 0px;
+        padding-left: 5px;
+        overflow: hidden;
+        background-color: #fffff5;
+    }
+    li {
+        float: left;
+    }
+    li a {
+        display: block;
+        color: #111;
+        text-align: center;
+        padding: 20px 20px;
+        text-decoration: none;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+    }
+    li a:hover {
+        -moz-transition: all .2s ease-in;
+        -o-transition: all .2s ease-in;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        background-color: #ffffb0;
+        border-left: 1px solid #aeaeae;
+        border-right: 1px solid #aeaeae;
+    }
+    header {
+        vertical-align: bottom;
+        background-color: #fffff5;
+        border-bottom: 1px solid #aeaeae;
+    }
+    * {
+        font-family: 'Poppins';
     }
 </style>
